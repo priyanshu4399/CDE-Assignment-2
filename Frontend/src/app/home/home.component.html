@@ -1,0 +1,96 @@
+<body>
+    <div id="navbar">
+        <div class="logo-div">
+            <a class="ml-2" href="#">
+                <img src="../../assets/logo.png" alt="logo" />
+            </a>
+        </div>
+        <div class="search-div">
+            <input id="search" type="text" placeholder="Search CCTV brands, products, accessories..." />
+            <a class="ml-2" href="#">
+                <img class="login-img" src="../../assets/login-btn.png" alt="login-btn" />
+            </a>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row main">
+            <div class="col-lg-2 side-menu">
+                <a style="color: white;" href="#">Popular Brand Category</a>
+                <a href="#">CP Plus CCTV Cameras</a>
+                <a href="#">Hikvision CCTV Cameras</a>
+                <a href="#">Godrej CCTV Cameras</a>
+                <a href="#">Dahua CCTV Cameras</a>
+                <br><br>
+                <a style="color: white;" href="#">Category</a>
+                <a href="#">Security</a>
+                <br><br>
+                <a style="color: white;" href="#">Price</a>
+                <input type="checkbox" id="price" name="price" value="amount">
+                <label for="price">&#8377;1-&#8377;500</label><br>
+                <input type="checkbox" id="price" name="price" value="amount">
+                <label for="price">&#8377;501-&#8377;1000</label><br>
+                <input type="checkbox" id="price" name="price" value="amount">
+                <label for="price">&#8377;1001-&#8377;2500</label><br>
+                <input type="checkbox" id="price" name="price" value="amount">
+                <label for="price">&#8377;2501-&#8377;5000</label><br>
+                <input type="checkbox" id="price" name="price" value="amount">
+                <label for="price">&#8377;5001-&#8377;10000</label><br>
+                <input type="checkbox" id="price" name="price" value="amount">
+                <label for="price">&#8377;10001-&#8377;*</label>
+            </div>
+            <div class="col-lg-7 main-home">
+
+                <div #draggable>
+                    <div class="row">
+                        <div class="col-6 title">
+                            <h4>Recommended Products</h4>
+                        </div>
+                        <div class="col-6 ms-auto">
+                            <p class="text-end me-lg-5" style="color: darkgray;">See more</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3" *ngFor="let cctv of cctvList | slice:0:4">
+                            <!-- height="160px" width="170px" -->
+                            <div class="card">
+                                <a href="#">
+                                    <img [src]="cctv.img_url" alt="cctv_img" />
+                                    <div class="card-body">
+                                        <p class="card-text" style="color:blue">{{cctv.description}}</p>
+                                        <p class="card-text">&#8377;{{cctv.price}}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 title">
+                    <h4>Explore</h4>
+                </div>
+
+                <div class="card-group">
+                    <div class="card" *ngFor="let cctv of cctvList">
+                        <a href="#">
+                            <img [src]="cctv.img_url" alt="cctv_img" width=100% />
+                            <div class="card-body">
+                                <p class="card-text" style="color:blue">{{cctv.description}}</p>
+                                <p class="card-text">&#8377;{{cctv.price}}</p>
+                                <p class="card-text"><small class="text-muted">{{cctv.brand}}</small></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3 trailer-div">
+                <h4>Home Security</h4>
+                <div>
+                    <img src="../../assets/home-security.jpeg" alt="home-security">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
